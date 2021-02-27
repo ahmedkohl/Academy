@@ -6280,10 +6280,10 @@ __webpack_require__.r(__webpack_exports__);
  */
 const environment = {
     production: true,
-    //apiUrl:"https://localhost:44315/api/"
+    apiUrl: "https://localhost:44315/api/"
     //apiUrl:"http://elrehab.com/api/"
     //apiUrl:"http://51.77.199.190:91/api/"
-    apiUrl: 'http://5.9.162.25:94/api/'
+    //apiUrl:'http://5.9.162.25:94/api/'
 };
 
 
