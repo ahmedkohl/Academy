@@ -293,7 +293,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-container\">\n  <div class=\"logo-container\">\n    <a (click)=\"toggleSidebar()\" href=\"#\" class=\"sidebar-toggle\">\n      <nb-icon icon=\"menu-2-outline\"></nb-icon>\n    </a>\n    <a class=\"logo\" href=\"#\" (click)=\"navigateHome()\">\n  <span>Academy</span>\n    </a>\n  </div>\n  <nb-select [selected]=\"currentTheme\" (selectedChange)=\"changeTheme($event)\" status=\"primary\">\n    <nb-option *ngFor=\"let theme of themes\" [value]=\"theme.value\"> {{ theme.name }}</nb-option>\n  </nb-select>\n</div>\n<div class=\"d-none d-xl-block\">\n  <img  style=\"display: none;\" src=\"assets/img/logo.jpeg\"  width=\"780\" height=\"150\">\n</div>\n\n<div class=\"header-container\">\n  <nb-actions size=\"small\">\n    <nb-action class=\"user-action\" *nbIsGranted=\"['view', 'user']\" >\n      <nb-user [nbContextMenu]=\"userMenu\"\n               [name]=\"user?.name\">\n\n<!--  [onlyPicture]=\"userPictureOnly\" [picture]=\"user?.picture\">-->\n              \n      </nb-user>\n    </nb-action>\n  </nb-actions>\n</div>\n"
+module.exports = "<div class=\"header-container\">\n  <meta http-equiv=\"Content-Security-Policy\" content=\"upgrade-insecure-requests\">\n  <div class=\"logo-container\">\n    <a (click)=\"toggleSidebar()\" href=\"#\" class=\"sidebar-toggle\">\n      <nb-icon icon=\"menu-2-outline\"></nb-icon>\n    </a>\n    <a class=\"logo\" href=\"#\" (click)=\"navigateHome()\">\n  <span>Academy</span>\n    </a>\n  </div>\n  <nb-select [selected]=\"currentTheme\" (selectedChange)=\"changeTheme($event)\" status=\"primary\">\n    <nb-option *ngFor=\"let theme of themes\" [value]=\"theme.value\"> {{ theme.name }}</nb-option>\n  </nb-select>\n</div>\n<div class=\"d-none d-xl-block\">\n  <img  style=\"display: none;\" src=\"assets/img/logo.jpeg\"  width=\"780\" height=\"150\">\n</div>\n\n<div class=\"header-container\">\n  <meta http-equiv=\"Content-Security-Policy\" content=\"upgrade-insecure-requests\">\n  <nb-actions size=\"small\">\n    <nb-action class=\"user-action\" *nbIsGranted=\"['view', 'user']\" >\n      <nb-user [nbContextMenu]=\"userMenu\"\n               [name]=\"user?.name\">\n\n<!--  [onlyPicture]=\"userPictureOnly\" [picture]=\"user?.picture\">-->\n              \n      </nb-user>\n    </nb-action>\n  </nb-actions>\n</div>\n"
 
 /***/ }),
 
@@ -5520,7 +5520,7 @@ var Auth = /** @class */ (function () {
         var _this = this;
         if (localStorage.getItem('token') != null) {
             var clonedReq = req.clone({
-                headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+                headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token')),
             });
             return next.handle(clonedReq).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (succ) { }, function (err) {
                 if (err.status == 401) {
